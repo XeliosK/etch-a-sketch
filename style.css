@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    background-color: grey;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 10px;
+    margin: 0;
+    height: 960px;
+    width: 960px;
+}
+
+#gridBox {
+    flex: 0;
+    /* flex-shrink: 0; */
+    /* flex-grow: 0; */
+    flex-basis: calc(100% / 8 - 10px); /* need to implement this into JS, changing 2 to column by squared value */
+    background-color: white;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    /* aspect-ratio: 1 / 1; */
+}
