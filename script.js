@@ -9,10 +9,13 @@ function generateGrid(boxes) {
     for (i=0;i<boxes;i++) {
         const makeBox = document.createElement("div");
         makeBox.id = "gridBox";
-        ;
+        makeBox.style.opacity = "0";
+
         console.log(gridLength);
         makeBox.addEventListener('mouseenter', () => {
-        makeBox.style.backgroundColor = "pink";
+            makeBox.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+            makeBox.style.opacity -= "-0.10";
+            //makeBox.style.backgroundColor = "pink";
         });
         container.appendChild(makeBox);
     }
