@@ -4,14 +4,14 @@ const button = document.querySelector("button");
 
 
 function generateGrid(boxes) {
-    let gridLength = Math.sqrt(boxes)
-
-    for (i=0;i<boxes;i++) {
+    let gridSize = boxes * boxes;
+    console.log(gridSize);
+    for (i=0;i<gridSize;i++) {
         const makeBox = document.createElement("div");
         makeBox.id = "gridBox";
         makeBox.style.opacity = "0";
 
-        console.log(gridLength);
+        // console.log(gridLength);
         makeBox.addEventListener('mouseenter', () => {
             makeBox.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
             makeBox.style.opacity -= "-0.10";
@@ -20,13 +20,16 @@ function generateGrid(boxes) {
         container.appendChild(makeBox);
     }
     const allBoxes = document.querySelectorAll("#gridBox");
-    allBoxes.forEach(box => {box.style.flexBasis = `calc(100% / ${gridLength} - 10px)`;}); //" + gridLength + "
+    allBoxes.forEach(box => {
+        box.style.flexBasis = `calc(100% / ${boxes} - 1px)`;
+        box.style.height = `calc(100% / ${boxes} - 1px)`;
+    }); //" + gridLength + "
 }
 
 button.addEventListener("click", (el) => {
     const allBoxes = document.querySelectorAll("#gridBox");
     allBoxes.forEach(el => el.remove());
-    let input = prompt("Please enter grid size:");
+    let input = parseInt(prompt("Please enter grid size:"));
         if (input > 100) {
             input = 100;
         }

@@ -8,8 +8,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 10px;
-    padding: 10px;
+    gap: 1px;
+    padding: 1px;
     margin: 0;
     height: 960px;
     width: 960px;
@@ -19,7 +19,7 @@ body {
     flex: 0;
     /* flex-shrink: 0; */
     /* flex-grow: 0; */
-    flex-basis: calc(100% / 8 - 10px); /* need to implement this into JS, changing 2 to column by squared value */
+    /* flex-basis: calc(100% / 8 - 10px); /* need to implement this into JS, changing 2 to column by squared value */
     background-color: white;
     justify-content: space-evenly;
     align-items: space-evenly;
